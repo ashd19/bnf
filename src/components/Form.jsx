@@ -127,7 +127,7 @@ function Form({ setShowForm }) {
 
           <button
             type="submit"
-            className="w-full mt-6 py-3 bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 text-white font-bold text-lg rounded-2xl hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+            className="w-full mt-6 py-3 bg-linear-to-r from-orange-400 via-orange-500 to-yellow-400 text-white font-bold text-lg rounded-2xl hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
           >
             Join the waitlist
           </button>
