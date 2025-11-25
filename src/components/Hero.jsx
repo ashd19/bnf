@@ -18,7 +18,7 @@ function Hero() {
         The Strategy Traders Have <br />
         <div className="mt-2 md:mt-3 mb-2 roboto">Been Waiting For!</div>
       </div> 
-      <div className="md:hidden roboto tracking-tighter bg-linear-to-r from-white/50 via-white to-white/70 bg-clip-text  text-4xl sm:text-5xl md:text-7xl lg:text-8xl flex flex-col whitespace-nowrap leading-tight">
+      <div className="md:hidden roboto-bold tracking-tighter bg-linear-to-r from-white/50 via-white to-white/70 bg-clip-text  text-4xl sm:text-5xl md:text-7xl lg:text-8xl flex flex-col whitespace-nowrap leading-tight">
         The Strategy Traders  <br />
         <div className="mt-2 md:mt-3 mb-2 roboto">Have Been</div>
         <div> Waiting For!</div>
