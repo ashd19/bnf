@@ -9,6 +9,7 @@ function Form({ setShowForm }) {
   });
 
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -42,7 +43,7 @@ function Form({ setShowForm }) {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = validateForm();
 
@@ -51,8 +52,40 @@ function Form({ setShowForm }) {
       toast.error("Please fix the errors in the form.");
       return;
     }
-    console.log("Form submitted:", formData);
-    toast.success("You've successfully joined the waitlist!");
+
+    setLoading(true);
+
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxB7_5kUBomdo6g0mgMCzWAYZPYgaDIpQFAaxCddat3Fui9s058okE4eUjvWSag0YnX/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            phone: formData.phone,
+            email: formData.email,
+            timestamp: new Date().toISOString(),
+          }),
+        }
+      );
+
+      console.log("Form submitted:", formData);
+      toast.success("You've successfully joined the waitlist!");
+
+      setTimeout(() => {
+        setFormData({ name: "", phone: "", email: "" });
+        setShowForm(false);
+      }, 2000);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Failed to submit. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -63,7 +96,7 @@ function Form({ setShowForm }) {
       >
         ×
       </button>
-      <div className="w-full bg-linear-to-br from-orange-50 to-yellow-50 rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-orange-200">
+      <div className="w-full bg-gradient-to-br from-orange-50 to-yellow-50 rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-orange-200">
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-2 roboto">
           Claim Your Spot
         </h2>
@@ -79,7 +112,8 @@ function Form({ setShowForm }) {
               value={formData.name}
               onChange={handleChange}
               placeholder="Enter your name"
-              className={`w-full px-4 py-3 rounded-2xl border-2 focus:outline-none bg-white text-black placeholder-gray-500 transition duration-200 ${
+              disabled={loading}
+              className={`w-full px-4 py-3 rounded-2xl border-2 focus:outline-none bg-white text-black placeholder-gray-500 transition duration-200 disabled:opacity-50 ${
                 errors.name
                   ? "border-red-500 focus:border-red-600"
                   : "border-orange-300 focus:border-orange-500"
@@ -97,7 +131,8 @@ function Form({ setShowForm }) {
               value={formData.phone}
               onChange={handleChange}
               placeholder="Enter your phone number"
-              className={`w-full px-4 py-3 rounded-2xl border-2 focus:outline-none bg-white text-black placeholder-gray-500 transition duration-200 ${
+              disabled={loading}
+              className={`w-full px-4 py-3 rounded-2xl border-2 focus:outline-none bg-white text-black placeholder-gray-500 transition duration-200 disabled:opacity-50 ${
                 errors.phone
                   ? "border-red-500 focus:border-red-600"
                   : "border-orange-300 focus:border-orange-500"
@@ -115,7 +150,8 @@ function Form({ setShowForm }) {
               value={formData.email}
               onChange={handleChange}
               placeholder="Enter your email"
-              className={`w-full px-4 py-3 rounded-2xl border-2 focus:outline-none bg-white text-black placeholder-gray-500 transition duration-200 ${
+              disabled={loading}
+              className={`w-full px-4 py-3 rounded-2xl border-2 focus:outline-none bg-white text-black placeholder-gray-500 transition duration-200 disabled:opacity-50 ${
                 errors.email
                   ? "border-red-500 focus:border-red-600"
                   : "border-orange-300 focus:border-orange-500"
@@ -128,9 +164,10 @@ function Form({ setShowForm }) {
 
           <button
             type="submit"
-            className="w-full mt-6 py-3 bg-linear-to-r from-orange-400 via-orange-500 to-yellow-400 text-white font-bold text-lg rounded-2xl hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+            disabled={loading}
+            className="w-full mt-6 py-3 bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 text-white font-bold text-lg rounded-2xl hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Join the waitlist
+            {loading ? "Joining..." : "Join the waitlist"}
           </button>
         </form>
       </div>
