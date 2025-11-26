@@ -123,7 +123,7 @@ const Hero = () => {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-4 py-3 rounded-xl text-black focus:ring-1 border border-orange-200 foucs:border-transparent focus:ring-orange-500 outline-none text-sm"
+              className="flex-1 px-4 py-3 rounded-xl text-black focus:ring-1 border border-orange-200 foucs:border-transparent focus:ring-orange-500 outline-none text-sm w-[250px]" 
               required
             />
             <button
