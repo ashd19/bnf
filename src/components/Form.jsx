@@ -57,7 +57,7 @@ function Form({ setShowForm }) {
 
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxB7_5kUBomdo6g0mgMCzWAYZPYgaDIpQFAaxCddat3Fui9s058okE4eUjvWSag0YnX/exec",
+        "https://script.google.com/u/0/home/projects/17evfIxu30DP2FKKZErNSNOKLG1M7zLKPANhb_jZMSvXPTwNCr7Cs6B9q/edit",
         {
           method: "POST",
           mode: "no-cors",
