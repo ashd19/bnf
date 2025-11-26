@@ -102,12 +102,12 @@ const Hero = () => {
           <div className="inline-flex items-center space-x-2 px-4 roboto py-2 rounded-full text-black bg-white border-orange-300 border-2 text-sm mb-6">
             <span>🚀 Built in India</span>
           </div>
-          <h1 className="md:flex items-center justify-center text-center  text-6xl md:text-6xl text-black tracking-tighter mb-4">
+          <h1 className="md:flex items-center justify-center text-center  text-6xl md:text-6xl  text-black tracking-tighter mb-4">
             The Strategy <br />
-            <span className="text-orange-500 ml-5 mr-5">Traders</span>
-            Have
+            <span className="text-orange-500 md:ml-5 md:mr-5 mr-2  text-5xl">Traders</span>
+            <span className="text-5xl">Have</span>
           </h1>
-          <h2 className="md:flex md:items-center justify-center sm:text-4xl text-center md:text-5xl  text-black mb-6">
+          <h2 className="md:flex md:items-center justify-center text-3xl text-center md:text-5xl  text-black mb-6">
             <span className="text-orange-500 mr-5">Been Waiting</span>
             for
           </h2>
