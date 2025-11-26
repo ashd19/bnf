@@ -91,68 +91,63 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center text-white overflow-hidden">
-      <div className=" " />
-
-      <header className="w-full max-w-7xl mx-auto flex justify-between items-center px-6 mt-10 md:ml-10 md:absolute top-0 left-0 z-10">
-        <div className="text-red-700 text-6xl font-extrabold holtwood-one-sc-regular">
-          BNF
-        </div>
-      </header>
-
-      <main className="relative z-10 text-center px-6 mt-10">
-        <div className="inline-flex items-center space-x-2 px-4 roboto py-2 rounded-full text-black bg-white border-orange-300 border-2 text-sm mb-6">
-          <span>🚀 Built in India</span>
-        </div>
-
-        <h1 className="md:flex items-center justify-center text-center  text-6xl md:text-6xl text-black tracking-tighter mb-4">
-          The Strategy <br />
-          <span className="text-orange-500 ml-5 mr-5">Traders</span>
-          Have
-        </h1>
-        <h2 className="md:flex md:items-center justify-center sm:text-4xl text-center md:text-5xl  text-black mb-6">
-          <span className="text-orange-500 mr-5">Been Waiting</span>
-          for
-        </h2>
-
-        <p className="text-black max-w-2xl roboto mx-auto md:text-3xl mb-10">
-          Doors open soon. Don't get left behind.
-        </p>
-
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto"
-        >
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="flex-1 px-4 py-3 rounded-xl text-black focus:ring-1 border border-orange-200 foucs:border-transparent focus:ring-orange-500 outline-none text-sm"
-            required
-          />
-          <button
-            type="submit"
-            disabled={loading}
-            className={`px-6 py-3 rounded-xl text-sm font-medium bg-orange-600 hover:bg-orange-700 transition active:scale-95 ${
-              clicked ? "scale-95" : ""
-            } ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+    <div className="relative h-screen flex flex-col     items-center justify-center text-white overflow-hidden">
+      <div className="w-full md:p-5 ">
+        <header className="w-full max-w-7xl mx-auto flex  justify-between items-center px-6 mt-10 md:ml-10 md:absolute top-0 left-0 z-10">
+          <div className="text-red-700 text-6xl font-extrabold holtwood-one-sc-regular">
+            BNF
+          </div>
+        </header>
+        <main className="relative z-10 text-center px-6 mt-10">
+          <div className="inline-flex items-center space-x-2 px-4 roboto py-2 rounded-full text-black bg-white border-orange-300 border-2 text-sm mb-6">
+            <span>🚀 Built in India</span>
+          </div>
+          <h1 className="md:flex items-center justify-center text-center  text-6xl md:text-6xl text-black tracking-tighter mb-4">
+            The Strategy <br />
+            <span className="text-orange-500 ml-5 mr-5">Traders</span>
+            Have
+          </h1>
+          <h2 className="md:flex md:items-center justify-center sm:text-4xl text-center md:text-5xl  text-black mb-6">
+            <span className="text-orange-500 mr-5">Been Waiting</span>
+            for
+          </h2>
+          <p className="text-black max-w-2xl roboto mx-auto md:text-3xl mb-10">
+            Doors open soon.Don't get left behind.
+          </p>
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto"
           >
-            {loading ? (
-              <Loader2 className="animate-spin w-4 h-4 mx-auto" />
-            ) : submitted ? (
-              "Subscribed ✅"
-            ) : (
-              "Notify Me"
-            )}
-          </button>
-        </form>
-
-        <div className="footer w-full text-black flex px-2 md:px-4 flex-col md:flex-row font-light text-xs md:text-base mt-[50px] md:mt-[170px] md:gap-[400px] md:justify-between md:items-center">
-          <div>© 2025 Tori Trades. All rights reserved.</div>
-          <div>Terms & Conditions | Privacy Policy</div>
-        </div>
-      </main>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="flex-1 px-4 py-3 rounded-xl text-black focus:ring-1 border border-orange-200 foucs:border-transparent focus:ring-orange-500 outline-none text-sm"
+              required
+            />
+            <button
+              type="submit"
+              disabled={loading}
+              className={`px-6 py-3 rounded-xl text-sm font-medium bg-orange-600 hover:bg-orange-700 transition active:scale-95 ${
+                clicked ? "scale-95" : ""
+              } ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+            >
+              {loading ? (
+                <Loader2 className="animate-spin w-4 h-4 mx-auto" />
+              ) : submitted ? (
+                "Subscribed ✅"
+              ) : (
+                "Notify Me"
+              )}
+            </button>
+          </form>
+          <div className="footer w-full md:fixed md:left-0 md:right-0 bottom-0    text-black  px-2 md:px-4 flex flex-col md:flex-row font-light text-xs md:text-base md:ml-[60px]   items-center py-4 md:py-6">
+            <div>© 2025 World BNF. All rights reserved.</div>
+            <div className="md:ml-[850px]">Terms & Conditions | Privacy Policy</div>
+          </div>
+        </main>
+      </div>
     </div>
   );
 };
