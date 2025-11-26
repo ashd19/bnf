@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 function Form({ setShowForm }) {
   const [formData, setFormData] = useState({
@@ -47,10 +48,11 @@ function Form({ setShowForm }) {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
+      toast.error("Please fix the errors in the form.");
       return;
     }
-
     console.log("Form submitted:", formData);
+    toast.success("You've successfully joined the waitlist!");
   };
 
   return (

@@ -2,7 +2,7 @@ import "./index.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Form from "./components/Form";
-
+import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <div className="min-h-screen w-full bg-white relative">
@@ -17,6 +17,7 @@ function App() {
         }}
       />
       {/* Your Content/Components */}
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="flex roboto flex-col w-full relative z-10">
         <Navbar />
         <Hero />
