@@ -19,7 +19,7 @@ function App() {
       {/* Your Content/Components */}
       <Toaster position="top-center" reverseOrder={false} />
       <div className="flex roboto flex-col w-full relative z-10">
-        <Navbar />
+        {/* <Navbar /> */}
         <Hero />
         {/* <Form /> */}
       </div>
