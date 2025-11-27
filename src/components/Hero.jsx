@@ -98,16 +98,18 @@ const Hero = () => {
             BNF
           </div>
         </header>
-        <main className="relative z-10 text-center px-6 mt-10">
+        <main className="relative z-10 text-center px-6 ">
           <div className="inline-flex items-center space-x-2 px-4 roboto py-2 rounded-full text-black bg-white border-orange-300 border-2 text-sm mb-6">
             <span>🚀 Built in India</span>
           </div>
-          <h1 className="md:flex items-center justify-center text-center  text-6xl md:text-6xl  text-black tracking-tighter mb-4">
+          <h1 className="md:flex items-center justify-center text-center  text-6xl md:text-7xl  text-black tracking-tighter mb-4">
             The Strategy <br />
-            <span className="text-orange-500 md:ml-5 md:mr-5 mr-2  text-5xl">Traders</span>
-            <span className="text-5xl">Have</span>
+            <span className="text-orange-500 md:ml-5 md:mr-5 mr-2  ">
+              Traders
+            </span>
+            <span className="">Have</span>
           </h1>
-          <h2 className="md:flex md:items-center justify-center text-3xl text-center md:text-5xl  text-black mb-6">
+          <h2 className="md:flex md:items-center justify-center text-3xl text-center md:text-7xl  text-black mb-6">
             <span className="text-orange-500 mr-5">Been Waiting</span>
             for
           </h2>
@@ -123,7 +125,7 @@ const Hero = () => {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-4 py-3 rounded-xl text-black focus:ring-1 border border-orange-200 foucs:border-transparent focus:ring-orange-500 outline-none text-sm w-[250px]" 
+              className="flex-1 px-4 py-3 rounded-xl text-black focus:ring-1 border border-orange-200 foucs:border-transparent focus:ring-orange-500 outline-none text-sm w-[250px]"
               required
             />
             <button
@@ -144,7 +146,9 @@ const Hero = () => {
           </form>
           <div className="footer w-full md:fixed md:left-0 md:right-0 bottom-0    text-black  px-2 md:px-4 flex flex-col md:flex-row font-light text-xs md:text-base md:ml-[60px]   items-center py-4 md:py-6">
             <div>© 2025 World BNF. All rights reserved.</div>
-            <div className="md:ml-[850px]">Terms & Conditions | Privacy Policy</div>
+            <div className="md:ml-[850px]">
+              Terms & Conditions | Privacy Policy
+            </div>
           </div>
         </main>
       </div>
