@@ -93,7 +93,7 @@ const Hero = () => {
   return (
     <div className="relative h-screen flex flex-col     items-center justify-center text-white overflow-hidden">
       <div className="w-full md:p-5 ">
-        <header className="w-full max-w-7xl mx-auto flex  justify-between items-center px-6 mt-10 md:ml-10 md:absolute top-0 left-0 z-10">
+        <header className="w-full max-w-7xl mx-auto flex  justify-between items-center px-6 mb-[50px]  md:mt-10 md:ml-10 md:absolute top-0 left-0  z-10">
           <div className="text-red-700 text-6xl font-extrabold holtwood-one-sc-regular">
             BNF
           </div>
@@ -144,9 +144,9 @@ const Hero = () => {
               )}
             </button>
           </form>
-          <div className="footer w-full md:fixed md:left-0 md:right-0 bottom-0    text-black  px-2 md:px-4 flex flex-col md:flex-row font-light text-xs md:text-base md:ml-[60px]   items-center py-4 md:py-6">
+          <div className="footer md:flex   w-full md:fixed md:left-0 md:right-0 bottom-0    text-black  px-2 md:px-4 flex flex-col md:flex-row font-light text-xs md:text-base md:ml-[60px]   items-center py-4 md:py-6">
             <div>© 2025 World BNF. All rights reserved.</div>
-            <div className="md:ml-[850px]">
+            <div className="md:flex md:justify-end md:ml-auto md:gap-4 md:mr-20 md:mt-0">
               Terms & Conditions | Privacy Policy
             </div>
           </div>
