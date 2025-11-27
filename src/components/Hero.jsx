@@ -104,13 +104,13 @@ const Hero = () => {
           </div>
           <h1 className="md:flex items-center justify-center text-center  text-6xl md:text-7xl  text-black tracking-tighter mb-4">
             The Strategy <br />
-            <span className="text-orange-500 md:ml-5 md:mr-5 mr-2  ">
+            <span className="text-orange-500 md:text-7xl text-5xl md:ml-5 md:mr-5 mr-2  ">
               Traders
             </span>
-            <span className="">Have</span>
+            <span className="md:text-7xl text-5xl">Have</span>
           </h1>
-          <h2 className="md:flex md:items-center justify-center text-3xl text-center md:text-7xl  text-black mb-6">
-            <span className="text-orange-500 mr-5">Been Waiting</span>
+          <h2 className="md:flex md:items-center justify-center  text-center md:text-7xl text-3xl  text-black mb-6">
+            <span className="text-orange-500 md:mr-5 mr-2 md:text-7xl text-3xl ">Been Waiting</span>
             for
           </h2>
           <p className="text-black max-w-2xl roboto mx-auto md:text-3xl mb-10">
